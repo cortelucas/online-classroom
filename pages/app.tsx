@@ -3,12 +3,13 @@ import Nav from '../components/nav';
 import Head from 'next/head';
 import { signIn, signOut, useSession } from 'next-auth/client'
 
-const Home: NextPage = () => {
+const AppPage: NextPage = () => {
   const [ session, loading ] = useSession()
 
   return (   
     <div>
       <Nav />
+      <h1 className="text-3xl">Bem vindo a página App</h1>
       {!session && <>
         <div className="text-3xl">
           Not signed in <br/>
@@ -30,4 +31,4 @@ const Home: NextPage = () => {
     
   )
 }
-export default Home;
+export default AppPage;
